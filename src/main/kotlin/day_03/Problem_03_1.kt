@@ -5,17 +5,14 @@ import Solution
 import sourcePath
 import java.io.*
 
-class Problem_3_2(): Solution {
+class Problem_03_1(): Solution {
   override fun solve(): String {
     val treeMap: MutableList<List<Char>> = mutableListOf()
-    File("${sourcePath}/day_3/input.txt").forEachLine {
-      treeMap.add(it.toList())
+    File("${sourcePath}/day_03/input.txt").forEachLine {
+     treeMap.add(it.toList())
     }
-
-    val encounteredTreesMultiplied = 
-      countTrees(treeMap, 1, 1) * countTrees(treeMap, 3, 1) * countTrees(treeMap, 5, 1) * countTrees(treeMap, 7, 1) * countTrees(treeMap, 1, 2)
-
-    return "Problem 3-2:\n Encountered trees, multiplied: $encounteredTreesMultiplied"
+    
+    return "Problem 03-1:\n Encountered ${countTrees(treeMap, 3, 1)} trees."
   }
 
   fun countTrees(treeMap: List<List<Char>>, velocityX: Int, velocityY: Int): Int {

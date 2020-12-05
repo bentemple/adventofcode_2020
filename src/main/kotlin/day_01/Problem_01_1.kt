@@ -4,18 +4,18 @@ import Solution
 import sourcePath
 import java.io.*
 
-class Problem_1_1(): Solution {  
+class Problem_01_1(): Solution {
   override fun solve(): String {
     val inputSet: MutableSet<Int> = mutableSetOf<Int>()
-    FileInputStream(File("${sourcePath}/day_1/input.txt")).forEachLine {
+    FileInputStream(File("${sourcePath}/day_01/input.txt")).forEachLine {
       val value = it.toInt()
       inputSet.add(value)
       val targetAddition = TARGET_NUMBER - value
       if (inputSet.contains(targetAddition)) {
-        return "Problem 1-1:\n $value and $targetAddition both add up to $TARGET_NUMBER. The solution for them multiplied is ${value * targetAddition}"
+        return "Problem 01-1:\n $value and $targetAddition both add up to $TARGET_NUMBER. The solution for them multiplied is ${value * targetAddition}"
       }
     }
-    return "Problem 1-1:\n No Solution"
+    return "Problem 01-1:\n No Solution"
   }
 
   companion object {
@@ -23,7 +23,7 @@ class Problem_1_1(): Solution {
   }
 }
 
-// day_1.forEachLine doesn't support early returns, so adding this to make it slightly more efficient
+// day_01.forEachLine doesn't support early returns, so adding this to make it slightly more efficient
 inline fun InputStream.forEachLine(consumer: (line: String)->Unit){
   val reader = BufferedReader(InputStreamReader(this))
   var line: String?

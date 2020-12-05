@@ -4,15 +4,15 @@ import Solution
 import sourcePath
 import java.io.*
 
-class Problem_2_2(): Solution {
+class Problem_02_2(): Solution {
   override fun solve(): String {
     var validPasswordCount = 0
-    File("${sourcePath}/day_2/input.txt").forEachLine {
+    File("${sourcePath}/day_02/input.txt").forEachLine {
       if (isValidPassword(it)) {
         validPasswordCount++
       }
     }
-    return "Problem 2-2:\n Valid password count: $validPasswordCount"
+    return "Problem 02-2:\n Valid password count: $validPasswordCount"
   }
   
   private fun isValidPassword(passwordLine: String): Boolean {

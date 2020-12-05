@@ -4,10 +4,10 @@ import Solution
 import sourcePath
 import java.io.*
 
-class Problem_1_2(): Solution {
+class Problem_01_2(): Solution {
   override fun solve(): String {
     val inputSet: MutableSet<Int> = mutableSetOf<Int>()
-    File("${sourcePath}/day_1/input.txt").forEachLine {
+    File("${sourcePath}/day_01/input.txt").forEachLine {
       inputSet.add(it.toInt())
     }
 
@@ -15,11 +15,11 @@ class Problem_1_2(): Solution {
       for (value2 in inputSet.distinct()) {
         val targetAddition = TARGET_NUMBER - value1 - value2
         if (inputSet.contains(targetAddition)) {
-          return "Problem 1-2:\n $value1 and $value2 and $targetAddition all add up to $TARGET_NUMBER. The solution for them multiplied is ${value1 * value2 * targetAddition}"
+          return "Problem 01-2:\n $value1 and $value2 and $targetAddition all add up to $TARGET_NUMBER. The solution for them multiplied is ${value1 * value2 * targetAddition}"
         }
       }
     }
-    return "Problem 1-2:\n No Solution"
+    return "Problem 01-2:\n No Solution"
   }
 
   companion object {

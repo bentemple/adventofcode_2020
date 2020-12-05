@@ -4,12 +4,12 @@ import Solution
 import sourcePath
 import java.io.*
 
-class Problem_4_2(): Solution {
+class Problem_04_2(): Solution {
   override fun solve(): String {
     val passports: MutableList<MutableMap<String, String>> = mutableListOf<MutableMap<String, String>>().apply {
       this.add(mutableMapOf())
     }
-    File("${sourcePath}/day_4/input.txt").forEachLine {
+    File("${sourcePath}/day_04/input.txt").forEachLine {
      if (it.trim().isEmpty()) {
       passports.add(mutableMapOf())
      } else {
@@ -30,7 +30,7 @@ class Problem_4_2(): Solution {
      */
     val requiredEntries = listOf("byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid")
     val validPassportsCount = passports.count { isPassportValid(it, requiredEntries)}
-    return "day_4.Problem_4_2:\n Valid passport count: $validPassportsCount"
+    return "day_04.Problem_04_2:\n Valid passport count: $validPassportsCount"
   }
 
   fun appendPassportValues(passport: MutableMap<String, String>, values: String) {
