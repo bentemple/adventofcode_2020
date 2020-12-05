@@ -1,4 +1,4 @@
-package day_1
+package day_01
 
 import Solution
 import sourcePath
