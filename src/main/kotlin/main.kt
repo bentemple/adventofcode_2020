@@ -40,8 +40,8 @@ fun main() {
         Problem_05_2(),
         Problem_06_1(),
         Problem_06_2(),
-//        Problem_07_1(),
-//        Problem_07_2(),
+        Problem_07_1(),
+        Problem_07_2(),
 //        Problem_08_1(),
 //        Problem_08_2(),
 //        Problem_09_1(),
@@ -79,6 +79,9 @@ fun main() {
 //        Problem_25_1(),
 //        Problem_25_2(),
     ).forEach {
+        val startTime = System.currentTimeMillis()
         println(it.solve())
+        val endTime = System.currentTimeMillis()
+        println(" Problem took ${endTime - startTime} Ms to complete.")
     }
 }
