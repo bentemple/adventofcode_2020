@@ -4,7 +4,7 @@ import Solution
 import sourcePath
 import java.io.*
 
-class Problem_06_2(): Solution {
+class Problem_06_2() : Solution {
     override fun solve(): String {
         var inputs: MutableList<MutableSet<Char>> = mutableListOf()
         inputs.add(mutableSetOf<Char>().apply {

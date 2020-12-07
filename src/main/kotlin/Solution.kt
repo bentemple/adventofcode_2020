@@ -1,3 +1,3 @@
 interface Solution {
-  fun solve(): String
+    fun solve(): String
 }
