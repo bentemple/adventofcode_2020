@@ -80,8 +80,28 @@ fun main() {
 //        Problem_25_2(),
     ).forEach {
         val startTime = System.currentTimeMillis()
-        println(it.solve())
+        val solution = it.solve()
         val endTime = System.currentTimeMillis()
+        println(solution)
         println(" Problem took ${endTime - startTime} Ms to complete.")
     }
+
+    println("\nProfiling problem 07_01")
+    val problemToProfile = Problem_07_1()
+    val tooLongRuns = mutableListOf<Long>()
+    val runTime = mutableListOf<Long>()
+    for (i in 0..100) {
+        val startTime = System.currentTimeMillis()
+        problemToProfile.solve()
+        val endTime = System.currentTimeMillis()
+        val duration = endTime - startTime
+        if (duration < 20) {
+            runTime.add(duration)
+        } else {
+            tooLongRuns.add(duration)
+        }
+    }
+    println("Runs: $runTime")
+    println("Average runtime was: ${runTime.sum() / runTime.count()}")
+    println("Too long runs: $tooLongRuns")
 }
