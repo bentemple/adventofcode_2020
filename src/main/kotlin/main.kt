@@ -42,8 +42,8 @@ fun main() {
         Problem_06_2(),
         Problem_07_1(),
         Problem_07_2(),
-//        Problem_08_1(),
-//        Problem_08_2(),
+        Problem_08_1(),
+        Problem_08_2(),
 //        Problem_09_1(),
 //        Problem_09_2(),
 //        Problem_10_1(),
@@ -79,29 +79,44 @@ fun main() {
 //        Problem_25_1(),
 //        Problem_25_2(),
     ).forEach {
-        val startTime = System.currentTimeMillis()
+        val startTime = System.nanoTime()
         val solution = it.solve()
-        val endTime = System.currentTimeMillis()
+        val endTime = System.nanoTime()
         println(solution)
-        println(" Problem took ${endTime - startTime} Ms to complete.")
+        println(" Problem took ${(endTime - startTime).toFloat() / 1_000_000f} Ms to complete.")
+        println(" Average benchmark time for ${it.javaClass.simpleName} is ${benchmarkSolution(it)} Ms")
     }
 
-    println("\nProfiling problem 07_01")
-    val problemToProfile = Problem_07_1()
-    val tooLongRuns = mutableListOf<Long>()
-    val runTime = mutableListOf<Long>()
-    for (i in 0..100) {
-        val startTime = System.currentTimeMillis()
-        problemToProfile.solve()
-        val endTime = System.currentTimeMillis()
-        val duration = endTime - startTime
-        if (duration < 20) {
-            runTime.add(duration)
-        } else {
-            tooLongRuns.add(duration)
-        }
+    benchmarkSolution(Problem_08_1())
+    benchmarkSolution(Problem_08_2())
+}
+
+private fun benchmarkSolution(solutionToProfile: Solution, shouldLog: Boolean = false): Float {
+    if (shouldLog) {
+        println()
+        println("\nProfiling problem ${solutionToProfile.javaClass.simpleName}")
     }
-    println("Runs: $runTime")
-    println("Average runtime was: ${runTime.sum() / runTime.count()}")
-    println("Too long runs: $tooLongRuns")
+    val runTimes = mutableListOf<Long>()
+    for (i in 0..100) {
+        val startTime = System.nanoTime()
+        solutionToProfile.solve()
+        val endTime = System.nanoTime()
+        val duration = endTime - startTime
+        runTimes.add(duration)
+    }
+    if (shouldLog) {
+        println("Runs: ${runTimes.map { it.toFloat() / 1_000_000f }}")
+    }
+
+    val sortedRunTimes = runTimes.sorted()
+    val medianRunTime = sortedRunTimes[runTimes.size / 2]
+    // Throw out any value > 2x the median
+    val cutOff = medianRunTime * 2
+    val averageBelowCutoff = runTimes.filter { it < cutOff }.let { it.sum() / it.count()}
+    if (shouldLog) {
+        println("Median runtime was: ${medianRunTime.toFloat() / 1_000_000f} Ms")
+        println("Average runtime was: ${averageBelowCutoff.toFloat() / 1_000_000f} Ms")
+        println()
+    }
+    return averageBelowCutoff.toFloat() / 1_000_000f
 }
