@@ -17,6 +17,6 @@ class Problem_06_1() : Solution {
                 }
             }
         }
-        return "Problem 06-1:\n Total questions answered yes to: ${inputs.sumOf { it.size }}"
+        return "${this::class.java.simpleName}:\n Total questions answered yes to: ${inputs.sumOf { it.size }}"
     }
 }

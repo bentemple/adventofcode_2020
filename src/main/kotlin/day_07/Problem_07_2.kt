@@ -29,12 +29,12 @@ class Problem_07_2() : Solution {
                         }
                     }
                 }
-                //println("Bag: $bagColor, contains the following bag colors: $containedBagColors")
+                //println(findNextInstructionLoop@"Bag: $bagColor, contains the following bag colors: $containedBagColors")
                 bagColorsMapping[bagColor] = containedBagColors
             }
         }
         val bagsContainedInTargetBag: Int = countBagsContainedInBag(targetColor, bagColorsMapping)
-        return "Problem 07-2:\n Total bag colors containing $targetColor bags is $bagsContainedInTargetBag"
+        return "${this::class.java.simpleName}:\n Total bag colors containing $targetColor bags is $bagsContainedInTargetBag"
     }
 
     private fun countBagsContainedInBag(targetBag: String, bagColorsMap: MutableMap<String, Map<String, Int>>): Int {

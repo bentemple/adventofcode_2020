@@ -19,6 +19,6 @@ class Problem_06_2() : Solution {
                 inputs.last().retainAll(input.toList())
             }
         }
-        return "Problem 06-2:\n Total questions answered yes to by everyone in each group: ${inputs.sumOf { it.size }}"
+        return "${this::class.java.simpleName}:\n Total questions answered yes to by everyone in each group: ${inputs.sumOf { it.size }}"
     }
 }

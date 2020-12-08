@@ -12,7 +12,7 @@ class Problem_03_1() : Solution {
             treeMap.add(it.toList())
         }
 
-        return "Problem 03-1:\n Encountered ${countTrees(treeMap, 3, 1)} trees."
+        return "${this::class.java.simpleName}:\n Encountered ${countTrees(treeMap, 3, 1)} trees."
     }
 
     fun countTrees(treeMap: List<List<Char>>, velocityX: Int, velocityY: Int): Int {

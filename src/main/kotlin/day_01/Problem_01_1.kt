@@ -12,10 +12,10 @@ class Problem_01_1() : Solution {
             inputSet.add(value)
             val targetAddition = TARGET_NUMBER - value
             if (inputSet.contains(targetAddition)) {
-                return "Problem 01-1:\n $value and $targetAddition both add up to $TARGET_NUMBER. The solution for them multiplied is ${value * targetAddition}"
+                return "${this::class.java.simpleName}:\n $value and $targetAddition both add up to $TARGET_NUMBER. The solution for them multiplied is ${value * targetAddition}"
             }
         }
-        return "Problem 01-1:\n No Solution"
+        return "${this::class.java.simpleName}:\n No Solution"
     }
 
     companion object {

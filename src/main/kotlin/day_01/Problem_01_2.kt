@@ -15,11 +15,11 @@ class Problem_01_2() : Solution {
             for (value2 in inputSet.distinct()) {
                 val targetAddition = TARGET_NUMBER - value1 - value2
                 if (inputSet.contains(targetAddition)) {
-                    return "Problem 01-2:\n $value1 and $value2 and $targetAddition all add up to $TARGET_NUMBER. The solution for them multiplied is ${value1 * value2 * targetAddition}"
+                    return "${this::class.java.simpleName}:\n $value1 and $value2 and $targetAddition all add up to $TARGET_NUMBER. The solution for them multiplied is ${value1 * value2 * targetAddition}"
                 }
             }
         }
-        return "Problem 01-2:\n No Solution"
+        return "${this::class.java.simpleName}:\n No Solution"
     }
 
     companion object {

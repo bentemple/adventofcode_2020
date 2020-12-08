@@ -19,7 +19,7 @@ class Problem_03_2() : Solution {
                 1
             ) * countTrees(treeMap, 1, 2)
 
-        return "Problem 03-2:\n Encountered trees, multiplied: $encounteredTreesMultiplied"
+        return "${this::class.java.simpleName}:\n Encountered trees, multiplied: $encounteredTreesMultiplied"
     }
 
     fun countTrees(treeMap: List<List<Char>>, velocityX: Int, velocityY: Int): Int {

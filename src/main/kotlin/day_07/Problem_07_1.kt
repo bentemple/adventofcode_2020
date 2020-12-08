@@ -28,7 +28,7 @@ class Problem_07_1() : Solution {
             }
         }
         val bagsContainingTargetColor: Int = countBagsContainingBagColors(setOf(targetColor), bagColorsMapping)
-        return "Problem 07-1:\n Total bag colors containing $targetColor bags is $bagsContainingTargetColor"
+        return "${this::class.java.simpleName}:\n Total bag colors containing $targetColor bags is $bagsContainingTargetColor"
     }
 
     private fun countBagsContainingBagColors(

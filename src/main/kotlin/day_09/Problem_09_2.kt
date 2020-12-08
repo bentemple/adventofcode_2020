@@ -8,6 +8,6 @@ class Problem_09_2() : Solution {
     override fun solve(): String {
         File("${sourcePath}/day_09/input.txt").forEachLine { input ->
         }
-        return "Problem 09-2:\n Solution"
+        return "${this::class.java.simpleName}:\n Solution"
     }
 }

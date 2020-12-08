@@ -12,7 +12,7 @@ class Problem_02_1() : Solution {
                 validPasswordCount++
             }
         }
-        return "Problem 02-1:\n Valid password count: $validPasswordCount"
+        return "${this::class.java.simpleName}:\n Valid password count: $validPasswordCount"
     }
 
     fun isValidPassword(passwordLine: String): Boolean {

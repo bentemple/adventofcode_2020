@@ -16,6 +16,6 @@ class Problem_05_1() : Solution {
             val seatNumber = Integer.parseInt(binaryInput, 2)
             maxSeatNumber = maxSeatNumber.coerceAtLeast(seatNumber)
         }
-        return "Problem 05-1:\n Max seat number: $maxSeatNumber"
+        return "${this::class.java.simpleName}:\n Max seat number: $maxSeatNumber"
     }
 }

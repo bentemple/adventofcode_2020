@@ -20,11 +20,11 @@ class Problem_05_2() : Solution {
         seats.sorted().forEach { seat ->
             val lastSeat = previousSeat
             if (lastSeat != null && lastSeat + 2 == seat) {
-                return "Problem 05-2:\n Your seat number is ${lastSeat + 1}"
+                return "${this::class.java.simpleName}:\n Your seat number is ${lastSeat + 1}"
             } else {
                 previousSeat = seat
             }
         }
-        return "Problem 05-2:\n Unable to find your seat."
+        return "${this::class.java.simpleName}:\n Unable to find your seat."
     }
 }
